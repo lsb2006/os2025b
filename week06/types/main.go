@@ -2,14 +2,13 @@ package main
 
 import (
 	"fmt"
-	"math"
-	"strings"
+	"reflect"
 )
 
-// Ctrl+F5
 func main() {
-	fmt.Println(math.Ceil(2.31))
-	fmt.Println(strings.Title("go developer"))
-	fmt.Println("Kim\nInha\t\"\\") //C like
-	fmt.Println('A', '가')
+	fmt.Println(reflect.TypeOf(2.31))
+	fmt.Println(reflect.TypeOf("go developer"))
+	fmt.Println(reflect.TypeOf('A'))
+	fmt.Println(reflect.TypeOf(true))
+	fmt.Println(reflect.TypeOf(91))
 }
