@@ -6,9 +6,10 @@ import (
 )
 
 func main() {
-	fmt.Println(reflect.TypeOf(2.31))
-	fmt.Println(reflect.TypeOf("go developer"))
-	fmt.Println(reflect.TypeOf('A'))
-	fmt.Println(reflect.TypeOf(true))
-	fmt.Println(reflect.TypeOf(91))
+	// var 64f float64
+	// fmt.Println(64f, reflect.TypeOf(f64))
+
+
+	totalPrice := 1000
+	fmt.Println(totalPrice, reflect.TypeOf(totalPrice))
 }
