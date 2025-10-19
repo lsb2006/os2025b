@@ -1,40 +1,48 @@
+// guess challenges players to guess a random number.
 package main
 
 import (
 	"bufio"
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 	"strconv"
 	"strings"
 )
 
 func main() {
-	// shadowing
-	// var int int = 99
-	// var b int = 8
-	// var fmt string = "inha"
-	// fmt.Println(int, b)
-	// fmt.Println()
+	target := rand.Intn(100) + 1
+	fmt.Println("I've chosen a random number between 1 and 100.")
+	fmt.Println("Can you guess it?")
 
-	fmt.Print("Enter a score: ")
-	r := bufio.NewReader(os.Stdin)
-	i, err := r.ReadString('\n')
-	if err != nil {
-		log.Fatal(err)
+	reader := bufio.NewReader(os.Stdin)
+	success := false
+	for guesses := 0; guesses < 10; guesses++ {
+		fmt.Println("You have", 10-guesses, "guesses left.")
+		fmt.Print("Make a guess: ")
+		input, err := reader.ReadString('\n')
+		if err != nil {
+			log.Fatal(err)
+		}
+		input = strings.TrimSpace(input)
+		guess, err := strconv.Atoi(input)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		if guess < target {
+			fmt.Println("Oops. Your guess was LOW.")
+		} else if guess > target {
+			fmt.Println("Oops. Your guess was HIGH.")
+		} else {
+			success = true
+			fmt.Println("Good job! You guessed it!")
+			break
+		}
 	}
 
-	i = strings.TrimSpace(i)                // 문자열 주위에 붙은 공간 및 탭 키 등 제거
-	score, err := strconv.ParseFloat(i, 64) // 정리된 문자열을 실수 타입으로 변환
-	if err != nil {
-		log.Fatal(err)
+	if !success {
+		fmt.Println("Sorry, you didn't guess my number. It was:", target)
 	}
-
-	var status string
-	if score >= 60 {
-		status = "Pass"
-	} else {
-		status = "Fail"
-	}
-	fmt.Println(score, status)
 }
