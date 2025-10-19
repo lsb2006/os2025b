@@ -1,20 +1,20 @@
 리눅스 명령어
 - ls
 - ls 옵션a
-- touch 파일명
+- touch 파일명 (파일명을 생성하는 명령어)
 - cd 폴더명
 - cd ..
 - cat 파일명
 
 깃 명령어
-- git init
-- git status
-- git add 파일명
-- git add .
-- git config --global user.email "개인이메일주소"
-- git config --global user.name "ID"
-- git config --list
+- git init (현재 폴더를 깃이 관리하게 만드는 명령어)
+- git status (현재 깃이 관리하고 있는 폴더의 상태를 확인하는 명령어)
+- git add 파일명 (파일명을 스테이지에 올리는 명령어)
+- git add . (현재 폴더에 있는 모든 파일을 스테이지에 올리는 명령어)
+- git config --global user.email "개인이메일주소" (사용자의 이메일을 등록하는 명령어)
+- git config --global user.name "ID" (사용자의 아이디를 등록하는 명령어)
+- git config --list (현재 설정된 값들을 보는 명령어)
 - git commit -m "커밋에 남길 메세지"
 - git log
-- git checkout 해시코드전체 또는 7자리
-- git checkout -
+- git checkout 해시코드전체 또는 7자리 (해당 시점으로 이동하는 명령어)
+- git checkout - (원래 시점으로 돌아오는 명령어)
